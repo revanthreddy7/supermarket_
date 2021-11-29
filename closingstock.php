@@ -95,7 +95,7 @@
 
                     <footer>&copy; Copyright <strong><span>Trinetra</span></strong>. All Rights Reserved</footer>
                   </div>";
-                $header = "Cc: trinetraadm@gmail.com'\r\n";
+                // $header = "Cc: trinetraadm@gmail.com'\r\n";
                 $header = "MIME-Version: 1.0\r\n";
                 $header.= "Content-type: text/html;charset=iso-8859-1\r\n";
                 $header.= "Content-Transfer-Encoding: 7bit\r\n";

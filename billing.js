@@ -1,19 +1,118 @@
-console.log("eio");
+console.log("102");
 // barcode.addEventListener('input', inputHandler);
 $(document).ready(function(){
-  var tv=0;var b=0;
-  // $("#tamt").hide();
-  // $("#barcode").on("input", function(){
-  //       // Print entered value in a div box
-  //       $("#tamt").text($(this).val());
-  //       var a=  $("#tamt").text();
-  //       console.log(a);
+  var tv=0;var b=0;var tmp=0;
+  $("#barcode").attr('disabled',true);
+  $("#pd").hide();
+  $("#oneid").hide();
+  $("#twoid").hide();
+  $("#threeid").hide();
+  $("#barcode").on("input", function(){
+        // Print entered value in a div box
+        $("#pd").text($(this).val());
+        var a=  $("#pd").text();
+        console.log(a);
+        if(a.length==13){$("#addbtn").click();$("#barcode").val("");}
 
-  // });
+  });
+  $("#cemail").keyup(function(){
+    if(this.value.trim()!="")
+      {
+        $("#barcode").attr('disabled',false);
+      }
+      else {
+        $("#barcode").attr('disabled',true);
+        // if($("$searchcat").value.trim()!="") $("#search").attr('disabled',false);
+        // else if($("$searchname").value.trim()!="")$("#search").attr('disabled',false);
+      }
+  });
   // $("#payable").hide();
+  $("#barcode").keyup(function(){
+    if(this.value.trim()!="")
+      {
+        $("#productname").attr('disabled',true);
+      }
+      else {
+        $("#productname").attr('disabled',false);
+        // if($("$searchcat").value.trim()!="") $("#search").attr('disabled',false);
+        // else if($("$searchname").value.trim()!="")$("#search").attr('disabled',false);
+      }
+  });
+  $("#productname").keyup(function(){
+    if(this.value.trim()!="")
+      {
+        $("#barcode").attr('disabled',true);
+      }
+      else {
+        $("#barcode").attr('disabled',false);
+        // if($("$searchcat").value.trim()!="") $("#search").attr('disabled',false);
+        // else if($("$searchname").value.trim()!="")$("#search").attr('disabled',false);
+      }
+  });
+  //FOR THE PRODUCT DROPDOWN DATALIST---------------------------------------------------------------------------------------------------------------------------------
+      $(document).on('dblclick', 'input[list]', function(event){
+        event.preventDefault();
+            var str = $(this).val();
+        $('div[list='+$(this).attr('list')+'] span').each(function(k, obj){
+                if($(this).html().toLowerCase().indexOf(str.toLowerCase()) < 0){
+                    $(this).hide();
+                }
+            })
+        $('div[list='+$(this).attr('list')+']').toggle(100);
+        $(this).focus();
+    })
+
+    $(document).on('blur', 'input[list]', function(event){
+            event.preventDefault();
+            var list = $(this).attr('lit');
+            setTimeout(function(){
+                $('div[list='+list+']').hide(100);
+            }, 100);
+        })
+
+        $(document).on('click', 'div[list] span', function(event){
+            event.preventDefault();
+            var list = $(this).parent().attr('list');
+            var item = $(this).html();
+            $('input[list='+list+']').val(item);
+            $('div[list='+list+']').hide(100);
+        })
+
+    $(document).on('keyup', 'input[list]', function(event){
+            event.preventDefault();
+            var list = $(this).attr('list');
+        var divList =  $('div[list='+$(this).attr('list')+']');
+        if(event.which == 27){ // esc
+            $(divList).hide(200);
+            $(this).focus();
+        }
+        else if(event.which == 13){ // enter
+            if($('div[list='+list+'] span:visible').length == 1){
+                var str = $('div[list='+list+'] span:visible').html();
+                $('input[list='+list+']').val(str);
+                $('div[list='+list+']').hide(100);
+            }
+        }
+        else if(event.which == 9){ // tab
+            $('div[list]').hide();
+        }
+        else {
+            $('div[list='+list+']').show(100);
+            var str  = $(this).val();
+            $('div[list='+$(this).attr('list')+'] span').each(function(){
+              if($(this).html().toLowerCase().indexOf(str.toLowerCase()) < 0){
+                $(this).hide(200);
+              }
+              else {
+                $(this).show(200);
+              }
+            })
+          }
+        })
+//DROP DOWN LIST ENDED----------------------------------------------------------------------------------
   $("#addbtn").click(function(){
-      $("#ams").hide();
-      $("#amc").hide();
+      // $("#ams").hide();
+      // $("#amc").hide();
       var barcode=$("#barcode").val();
       var quan=$("#quan").val();
       var cemail=$("#cemail").val();
@@ -40,6 +139,9 @@ $(document).ready(function(){
           var price=info[0].price;
           var sgst=info[0].sgst;
           var cgst=info[0].cgst;
+          var gtotal=info[0].gtotal;
+          tmp=gtotal;
+          gtotal=parseFloat(gtotal).toFixed(2);
           sgst=parseFloat(sgst).toFixed(2);
           cgst=parseFloat(cgst).toFixed(2);
           console.log(sgst,cgst);
@@ -68,6 +170,7 @@ $(document).ready(function(){
             b=TotalValue.toFixed(2);
             console.log(jQuery.type(b));
             $("#tamt").html("<span style='text-align:center;'>Core Total: &#8377;"+b+"</span>");
+            $("#oneid").text(b);
             sum=parseFloat(sum);
             b=parseFloat(b);
             sum=sum+b;
@@ -85,6 +188,7 @@ $(document).ready(function(){
             b=b.toFixed(2);
             console.log(b,jQuery.type(b));
             $("#sgst").html("<span style='text-align:center;'>SGST: &#8377;"+b+"</span>");
+            $("#twoid").text(b);
             sum=parseFloat(sum);
             b=parseFloat(b);
             sum=sum+b;
@@ -97,14 +201,23 @@ $(document).ready(function(){
             cgstvalue += currentRow;
             console.log(cgstvalue);
             b=cgstvalue.toFixed(2);
+            $("#threeid").text(b);
             $("#cgst").html("<span style='text-align:center;'>CGST: &#8377;"+b+"</span>");
+
+
             sum=parseFloat(sum);
             b=parseFloat(b);
             sum=(sum+b).toFixed(2);
             console.log(sum);
             console.log(sum);
           });
-          $("#pay").html("<span style='text-align:center;background-color:#32a852;'>Grand Total: &#8377;"+sum+"</span>");
+          var e1=parseFloat($("#oneid").text());
+          var e2=parseFloat($("#twoid").text());
+          var e3=parseFloat($("#threeid").text());
+          console.log(e1,e2,e3);
+          var e4=e1+e2+e3;
+
+          $("#pay").html("<span style='text-align:center;background-color:#32a852;'>Grand Total: &#8377;"+e4+"</span>");
           $("#msg").html(response);
           // $("#ams").hide();
           // $("#amc").hide();
@@ -121,44 +234,7 @@ $(document).ready(function(){
     window.open('pdfbill.php','_blank');
 
   });
-  // $("#tamt").show();
-  // var a=$("#tamt").text();
-  // var e=$("#sgst").text();
-  // var c=$("#cgst").text();
-  // a=parseFloat(a).toFixed(2);
-  // b=parseFloat(b).toFixed(2);
-  // c=parseFloat(c).toFixed(2);
-  // var d=parseFloat(a+e+c).toFixed(2);
-  // console.log(sum);
-  // $("#billtable").on("click", "#view", function() {
-  //    console.log("view");
-  //    var currentrow=$(this).closest("tr");
-  //    var data1 = currentrow.find("td:eq(0)");
-  //    var data2 = currentrow.find("td:eq(1)");
-  //    var data3= currentrow.find("td:eq(2)");
-  //    var d1=data1.text();
-  //    var d2=data2.text();
-  //    var d3=(data3.text());
-  //    console.log(d1,d2,d3);
-  //    // var inv=need3;
-  //     $.ajax({
-  //       method: "post",
-  //       url: "productsupdateinfo.php",
-  //       data: {
-  //         sname: d1,
-  //         inv: d2,
-  //         gtotal: d3
-  //       },
-  //       success: function(response){
-  //       $("#popup").show();
-  //       $("#popup").html(response);
-  //       setTimeout(function() {
-  //          $( "#popup" ).hide();
-  //        }, 2000);
-  //        window.open('pdfpractice.php','_blank');
-  //      }
-  //     })
-  // });
+
 
 
 

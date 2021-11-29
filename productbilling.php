@@ -27,7 +27,7 @@ if (!$conn)
   $gtotal=$rate+$persgst+$percgst;
   $json=array(["name"=>$name,"price"=>$price,"sgst"=>$sgst,"cgst"=>$cgst]);
   header('Content-Type: application/json');
-  $sql5="INSERT INTO billinginfo(cemail,Product,Qty,Rate,Amount,SGST,CGST,gtotal) VALUES ('$cemail','$name','$quan','$price','$rate','$sgst','$cgst','$gtotal')";
+  $sql5="INSERT INTO billinginfo(cemail,Product,Qty,Rate,Amount,SGST,CGST,gtotal) VALUES ('$cemail','$name','$quan','$price','$rate','$persgst','$percgst','$gtotal')";
   $result5=mysqli_query($conn,$sql5);
   if(!$result5)echo 'Failed'.mysqli_error($conn);
 

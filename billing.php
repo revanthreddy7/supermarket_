@@ -17,6 +17,19 @@
           <li class="nav-item"><a href="billerlogin.html"><button type="button" name="button" class="btn btn-danger">Log Out</button></a></li>
         </ul>
     </nav>
+    <?php
+    $servername="localhost";
+    $username="root";
+    $password="";
+    $database="trinetra";
+    $conn=mysqli_connect($servername,$username,$password,$database);
+    if (!$conn)
+    {
+      die("Sorry , failed to connect: ".mysqli_connect_error());
+    }
+      $sql="SELECT ProductName FROM products";
+      $result=mysqli_query($conn,$sql);
+     ?>
     <div class="alert alert-success alert-dismissible fade show" role="alert" id='msg'></div>
     <div class="float-container" id="formintro">
       <div class="float-child" id="introform">
@@ -26,7 +39,7 @@
             <label>Email: <br></label>
             <input style="width: 300px;display: inline;margin-left:100px" type="text" class="form-control" id="cemail" name ="cemail" placeholder="Email"><br><br>
             <!-- <p><span id='date-time'></span></p> -->
-            <label for="comp" id="adress">Address: <br></label>
+            <label>Address: <br></label>
             <input style="width: 300px;display: inline;" type="text" class="form-control" id="address" name ="comp" placeholder="Address">
         </div>
       </div>
@@ -36,9 +49,15 @@
            <div class="float-child">
              <label>Product/Bar Code: <br></label>
              <input style="width: 300px;display: inline;" type="text" class="form-control" id="barcode" name ="barcode" placeholder="Code"><br>
-             <label for="comp" id="productname">Product Name: <br></label>
-             <input style="width: 300px;display: inline;" type="text" class="form-control" id="productname" name ="comp" placeholder="Name">
+             <label>Product Name: <br></label>
+             <input style="width: 300px;display: inline;" type="text" class="form-control" id="productname" name ="productname" placeholder="Name" list="pl" autocomplete="off">
+             <!-- <div list="pl">
+             <?php while($row = mysqli_fetch_array($result)) { ?>
+               <span><?php echo $row['ProductName']; ?></span>
+               <?php } ?>
+             </div> -->
            </div>
+
            <div class="float-child">
              <form class="form-inline">
                <label>Qty: </label>
@@ -96,6 +115,10 @@
       </div>
     </div>
     <div id="result"></div>
+    <div id="pd"></div>
+    <p id="oneid"></p>
+    <p id="twoid"></p>
+    <p id="threeid"></p>
     <script src="billing.js"></script>
   </body>
   </html>
