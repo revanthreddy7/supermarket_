@@ -120,12 +120,12 @@
         <div class="container">
             <div class="row">
                 <div class="col form-1 section-description wow fadeIn">
-                    <h2 class="hedd">New Purchase Details</h2>
+                    <h2>New Purchase Details</h2>
                     <div class="divider-1 wow fadeInUp"><span></span></div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-10 offset-md-1">
+                <!-- <div class="col-md-10 offset-md-1 form-1-box wow fadeInUp"> -->
 
                     <!-- <form method="post"> -->
                         <!-- User's Credentials  -->
@@ -165,7 +165,6 @@
                         <fieldset class="form-group border p-3">
                             <legend class="w-auto px-2">Product Details</legend>
                             <div class="bb tt">
-                            <button type="button" name="savebutton1" class="btn btn-info" id="savebutton1"style="float:right;margin-right:20px;">Save</button>
 
                               <button type="button" name="addproduct" class="btn btn-success" id="addproduct" style="float:right;margin-right:20px;">Add Product</button>
 
@@ -176,7 +175,7 @@
                                     <th style="text-align: center;" scope="col">Quantity</th>
                                     <th scope="col" style="text-align: center;">Price</th>
                                     <th scope="col" style="text-align: center;">Amount</th>
-                                    <th scope="col" style="text-align: center;"></th>
+                                    <th scope="col" style="text-align: center;"><button type="button" name="savebutton1" class="btn btn-info" id="savebutton1">Save</button></th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -204,12 +203,5 @@
         </div>
     </div>
     <script src="add_purchase.js"></script>
-    <style>
-      .hedd{
-        text-align: center;
-        margin: 20px;
-
-      }
-    </style>
 </body>
 </html>

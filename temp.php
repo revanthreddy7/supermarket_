@@ -21,20 +21,13 @@ $pdf->Image('logo.png',70,0,30);
 $pdf->SetFont('Arial','B',18);
 // $pdf->Multicell(200,15,"Supplier Name"."\nSupplier email","",1);
 $pdf->SetTextColor(0, 105, 140);
-// Set the new timezone
-date_default_timezone_set('Asia/Kolkata');
-$date = date('d-m-y h:i:s');
-$pdf->Cell(210,15,'Invoice',0,1,'C');
+$pdf->Cell(200	,15,'Invoice',0,1,'C');
 $pdf->SetTextColor(0, 0, 0);
-$pdf->SetFont('Courier','I',10);
-$y = $pdf -> GetY();
-$pdf->Multicell(200,4,"Trinetra Super Market"."\n4-134/135,Hi-Tech City-500081\nHyderabad,\nTelangana"."\nsolutionstrinetra@gmail.com"."\n(+91)-9963483322\n".$date,0,'C');
+$pdf->SetFont('Arial','I',10);
 $pdf->Ln();
-$pdf->Multicell(200,4,"------------------------------------------------------------------------------------------",0,'C');
-$pdf->Multicell(200,4,"------------------------------------------------------------------------------------------",0,'C');
 $pdf->SetFillColor(146, 224, 247);
-// $pdf->Cell(85,7,'From',1,2,'',1);
-// $pdf->SetFillColor(255, 255, 255);
+$pdf->Cell(85,7,'From',1,2,'',1);
+$pdf->SetFillColor(255, 255, 255);
 $sql19="SELECT cemail FROM billinginfo LIMIT 1";
 // $details="SELECT InvoiceNo,SCompany FROM invoicepdf LIMIT 1";
 $result5=mysqli_query($conn,$sql19);
@@ -65,24 +58,24 @@ $pdf->SetTextColor(204, 12, 12);
 $pdf->SetTextColor(0, 0, 0);
 $x = $pdf -> GetX();
 $pdf->SetFillColor(245,224,66);
-$pdf->setXY($x,$y+14);
+$pdf->setXY($x-100,$y+14);
 $pdf->SetFont('Arial','I',10);
-// $pdf->Cell(185,7,"Products of Invoice",1,2,"L",1);
+$pdf->Cell(185,7,"Products of Invoice",1,2,"L",1);
 $pdf->SetFont('Arial','B',10);
 $y = $pdf -> GetY();//-----------------------------------------
 $pdf->SetFillColor(146, 224, 247);
-$pdf->Multicell(60,8,"Product",1,'C',1,1);
+$pdf->Multicell(60,8,"Product","LRB",'C',1,1);
 $x = $pdf -> GetX();
 $pdf->setXY($x+60,$y);
-$pdf->Multicell(25,8,"Quantity",1,'C',1,1);
+$pdf->Multicell(25,8,"Quantity","LRB",'C',1,1);
 $pdf->setXY($x+85,$y);
-$pdf->Multicell(25,8,"Rate",1,'C',1,1);
+$pdf->Multicell(25,8,"Rate","LRB",'C',1,1);
 $pdf->setXY($x+110,$y);
-$pdf->Multicell(25,8,"Amount",1,'C',1,1);
+$pdf->Multicell(25,8,"Amount","LRB",'C',1,1);
 $pdf->setXY($x+135,$y);
-$pdf->Multicell(25,8,"SGST",1,'C',1,1);
+$pdf->Multicell(25,8,"SGST","LRB",'C',1,1);
 $pdf->setXY($x+160,$y);
-$pdf->Multicell(25,8,"CGST",1,'C',1,1);
+$pdf->Multicell(25,8,"CGST","LRB",'C',1,1);
 $pdf->SetFillColor(255, 255, 255);//-------------------------
 // $sql="SELECT Proname,Quan,Pric,Amt,amst,amct,st,ct FROM invoicepdf";
 // $result=mysqli_query($conn,$sql);
@@ -97,9 +90,6 @@ while($item=mysqli_fetch_assoc($result6))
   $sql99="UPDATE closingstock SET existing=existing-'$a' WHERE ProName='$b'";
   $result99=mysqli_query($conn,$sql99);
   // if($result99)$pdf->SetTextColor(204, 12, 12);
-  $r=$item['Amount'];
-  $c=($item['SGST']/$r)*100;
-  $d=($item['CGST']/$r)*100;
   $y = $pdf -> GetY();
   $pdf->Multicell(60,8,$item['Product'],1,'C',1,1);
   $x = $pdf -> GetX();
@@ -110,9 +100,9 @@ while($item=mysqli_fetch_assoc($result6))
   $pdf->setXY($x+110,$y);
   $pdf->Multicell(25,8,$item['Amount'],1,'C',1,1);
   $pdf->setXY($x+135,$y);
-  $pdf->Multicell(25,8,$item['SGST']."(".$c."%)",1,'C',1,1);
+  $pdf->Multicell(25,8,$item['SGST'],1,'C',1,1);
   $pdf->setXY($x+160,$y);
-  $pdf->Multicell(25,8,$item['CGST']."(".$d."%)",1,'C',1,1);
+  $pdf->Multicell(25,8,$item['CGST'],1,'C',1,1);
 
 }
 $pdf->Ln();
@@ -148,53 +138,53 @@ $pdf->Multicell(190,8,"Core total: Rs.".$amt."\nTotal SGST: Rs.".$amsgst."\nTota
 $pdf->SetFont('Arial','B',10);
 $pdf->Ln();
 $pdf->Ln();
-$pdf->Cell(190,8,"This is a computer generated copy.",0,0,"C");
+$pdf->Cell(190,8,"This is a computer generated copy and hence signature is not required.",0,0,"C");
 $sql2="TRUNCATE TABLE billinginfo";
 $result2=mysqli_query($conn,$sql2);
 $to = $cemail;
 $from = "solutionstrinetra@gmail.com";
-$subject = "E-Bill - Trinetra Supermarket Solutions";
-$message = "<p> Find your E-bill attached below <br> Thank you! Visit again</p>";
-//
-// // a random hash will be necessary to send mixed content
+$subject = "E-Bill. Trinetra Solutions";
+$message = "<p>Thanks for shopping with us! <br> Find your E-bill attached below <br> Thank you! Visit again</p>";
+
+// a random hash will be necessary to send mixed content
 $separator = md5(time());
-//
-// // carriage return type (we use a PHP end of line constant)
+
+// carriage return type (we use a PHP end of line constant)
 $eol = PHP_EOL;
-//
-// // attachment name
-$filename = "e-bill.pdf";
-//
-// // encode data (puts attachment in proper format)
+
+// attachment name
+$filename = "test.pdf";
+
+// encode data (puts attachment in proper format)
 $pdfdoc = $pdf->Output("", "S");
 $attachment = chunk_split(base64_encode($pdfdoc));
-//
-// // main header
+
+// main header
 $headers  = "From: ".$from.$eol;
 $headers .= "MIME-Version: 1.0".$eol;
 $headers .= "Content-Type: multipart/mixed; boundary=\"".$separator."\"";
-//
-// // no more headers after this, we start the body! //
-//
+
+// no more headers after this, we start the body! //
+
 $body = "--".$separator.$eol;
 $body .= "Content-Transfer-Encoding: 7bit".$eol.$eol;
-$body .= "Thanks for shopping with us!".$eol;
-//
-// // message
+$body .= "This is a MIME encoded message.".$eol;
+
+// message
 $body .= "--".$separator.$eol;
 $body .= "Content-Type: text/html; charset=\"iso-8859-1\"".$eol;
 $body .= "Content-Transfer-Encoding: 8bit".$eol.$eol;
 $body .= $message.$eol;
-//
-// // attachment
+
+// attachment
 $body .= "--".$separator.$eol;
 $body .= "Content-Type: application/octet-stream; name=\"".$filename."\"".$eol;
 $body .= "Content-Transfer-Encoding: base64".$eol;
 $body .= "Content-Disposition: attachment".$eol.$eol;
 $body .= $attachment.$eol;
 $body .= "--".$separator."--";
-//
-// // send message
+
+// send message
 mail($to, $subject, $body, $headers);
 //-------------------------------
 // $pdf->Output();

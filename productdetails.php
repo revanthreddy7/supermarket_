@@ -22,21 +22,21 @@ if (!$conn)
 }
   $sql="INSERT INTO purchase_details(InvNo,Supplier,PName,Quantity,Price,Amt,sgst,cgst,amsgst,amcgst) VALUES ('$invoicenumber','$supplier','$product_name','$quantity','$price','$amt','$sgst','$cgst','$amsgst','$amcgst')";
   $result=mysqli_query($conn,$sql);
-  $sql1099="SELECT PName,Quantity,mql FROM purchase_details INNER JOIN products ON purchase_details.PName=products.ProductName";
-  $result1099=mysqli_query($conn,$sql1099);
-  if(mysqli_num_rows($result1099)>0)
-  {
-    while($row=mysqli_fetch_assoc($result1099))
-    {
-      $name=$row['PName'];
-      $ex=$row['Quantity'];
-      $mql=$row['mql'];
-      $sql3="INSERT INTO closingstock(ProName,existing,mql) VALUES ('$name','$ex','$mql')";
-      mysqli_query($conn,$sql3);
-      // echo "<tr><td style='text-align: center;'>".$row['PName']."</td><td style='text-align: center;'>".$row['Quantity']."</td><td style='text-align: center;'>".$row['mql']."</tr>";
-    }
-    // echo "</tbody>";
-  }
+  // $sql1099="SELECT PName,Quantity,mql FROM purchase_details INNER JOIN products ON purchase_details.PName=products.ProductName";
+  // $result1099=mysqli_query($conn,$sql1099);
+  // if(mysqli_num_rows($result1099)>0)
+  // {
+  //   while($row=mysqli_fetch_assoc($result1099))
+  //   {
+  //     $name=$row['PName'];
+  //     $ex=$row['Quantity'];
+  //     $mql=$row['mql'];
+  //     $sql3="INSERT INTO closingstock(ProName,existing,mql) VALUES ('$name','$ex','$mql')";
+  //     mysqli_query($conn,$sql3);
+  //     // echo "<tr><td style='text-align: center;'>".$row['PName']."</td><td style='text-align: center;'>".$row['Quantity']."</td><td style='text-align: center;'>".$row['mql']."</tr>";
+  //   }
+  //   // echo "</tbody>";
+  // }
   $sql1="SELECT SUM(Amt) AS value_amt FROM purchase_details WHERE purchase_details.InvNo='$invoicenumber'";
   $sql2="SELECT SUM(amsgst) AS value_amsgst FROM purchase_details WHERE purchase_details.InvNo='$invoicenumber'";
   $sql3="SELECT SUM(amcgst) AS value_amcgst FROM purchase_details WHERE purchase_details.InvNo='$invoicenumber'";
