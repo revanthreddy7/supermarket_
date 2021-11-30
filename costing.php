@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="adminhome.css">
     <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>-->
@@ -10,7 +13,59 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
-    <nav class="navbar navbar-default  navbar-fixed-top navbar-dark bg-dark ">
+
+
+
+
+  <nav class="navbar navbar-expand-custom navbar-mainbg">
+    <img src="logo.png" alt="" height=80px width=100px>
+    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+            <li class="nav-item ">
+                <a class="nav-link" href="adminhome.php">Home</a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="products.php">Products</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="costing.php">Costing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="inventory.php">Stock Purchase</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="closingstock.php">Closing Stock</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="suppliers.php">Suppliers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Employees</a>
+            </li>
+
+        
+        <li class="nav-item"><button type="button" name="button" class="btn btn-danger btnn">Log Out</button></li>
+      </ul>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <nav class="navbar navbar-default  navbar-fixed-top navbar-dark bg-dark ">
         <img src="logo.png" alt="" height=50px width=60px><a id="aone" class="navbar-brand">Costing</a>
         <a href="products.html" class="navbar-brand" id="atwo"><img src="products.png" alt="" width="35" height="30" class="d-inline-block align-text-top"> Products</a>
         <a href="inventory.html" class="navbar-brand" id="atwo"><img src="inventory.png" alt="" width="35" height="30" class="d-inline-block align-text-top"> Inventory</a>
@@ -21,7 +76,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a href="adminlogin.html"><button type="button" name="button" class="btn btn-danger" onclick="adminhome.html">Log Out</button></a></li>
         </ul>
-    </nav>
+    </nav> -->
     <div class="bb tt">
         <div class="form-group">
             <!-- <label for="usr">Search by:</label> -->
@@ -115,5 +170,7 @@
         </tbody>
       </table>
     </div>
+<link rel="stylesheet" href="navv.css">
+<script src="navv.js"></script>
   </body>
   </html>

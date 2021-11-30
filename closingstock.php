@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="adminhome.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -26,22 +28,41 @@
   }
   </style>
   <body>
-    <nav class="navbar navbar-default  navbar-fixed-top navbar-dark bg-dark ">
-        <a id="aone" class="navbar-brand">Inventory</a>
-        <div class="navbuttons">
-          <a href="inventory.php"><button type="button" name="button" class="btn btn-info" id="bnav" onclick="stockpurchase.php"> Stock Purchase</button></a>
-          <a href="closingstock.php"><button type="button" name="button" class="btn btn-warning" id="bnav" onclick="closingstock.php"> Closing Stock</button></a>
-          <a href="expired.php"><button type="button" name="button" class="btn btn-info" id="bnav" onlick="expired.php"> Expiry</button></a>
-
-        </div>
-
-        <!-- <a href="stockpurchase.html" class="navbar-brand" id="atwo"><img src="inventory.png" alt="" width="35" height="30" class="d-inline-block align-text-top"> Stock Purchase</a>
-        <a href="closingstock.html" class="navbar-brand" id="atwo"><img src="products.png" alt="" width="35" height="30" class="d-inline-block align-text-top"> Closing Stock</a>
-        <a href="sexpired.html" class="navbar-brand" id="atwo"><img src="supplier.png" alt="" width="35" height="30" class="d-inline-block align-text-top"> Expired Stock</a> -->
+  <nav class="navbar navbar-expand-custom navbar-mainbg">
+    <img src="logo.png" alt="" height=80px width=100px>
+    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars text-white"></i>
+    </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="managerlogin.html"><button type="button" name="button" class="btn btn-danger">Log Out</button></a></li>
-        </ul>
-    </nav>
+            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+            <li class="nav-item ">
+                <a class="nav-link" href="adminhome.php">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="products.php">Products</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="costing.php">Costing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="inventory.php">Stock Purchase</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="closingstock.php">Closing Stock</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="suppliers.php">Suppliers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Employees</a>
+            </li>
+
+        
+        <li class="nav-item"><button type="button" name="button" class="btn btn-danger btnn">Log Out</button></li>
+      </ul>
+    </div>
+</nav>
     <div class="bb tt">
         <div class="form-group">
             <!-- <button type="button" name="addnew" class="btn btn-success" id="addnew">Add Closing Stock</button> -->
@@ -137,5 +158,7 @@
       </table>
     </div>
     <script src="closingstock.js"></script>
+    <link rel="stylesheet" href="navv.css">
+<script src="navv.js"></script>
   </body>
   </html>

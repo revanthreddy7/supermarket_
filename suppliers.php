@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suppliers</title>
     <link rel="stylesheet" href="adminhome.css">
+    <link rel="stylesheet" href="suppliers_view.css">
+
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -34,9 +37,10 @@
         transform:translate(-50%,-50%) scale(0);
         background:#fff;
         width:700px;
-        height:350px;
-        z-index:2;
+        height:430px;
+        z-index:2;  
         /* text-align:center; */
+
         padding:20px;
         /* padding-top:30px; */
         box-sizing:border-box;
@@ -69,12 +73,41 @@
     </style>
 </head>
 <body>
-  <nav class="navbar navbar-default  navbar-fixed-top navbar-dark bg-dark ">
-      <img src="logo.png" alt="" height=50px width=60px><a id="aone" class="navbar-brand">Suppliers</a>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a href="managerlogin.html"><button type="button" name="button" class="btn btn-danger">Log Out</button></a></li>
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+    <img src="logo.png" alt="" height=80px width=100px>
+    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+            <li class="nav-item ">
+                <a class="nav-link" href="adminhome.php">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="products.php">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="costing.php">Costing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="inventory.php">Stock Purchase</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="closingstock.php">Closing Stock</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="suppliers.php">Suppliers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Employees</a>
+            </li>
+
+        
+        <li class="nav-item"><button type="button" name="button" class="btn btn-danger btnn">Log Out</button></li>
       </ul>
-  </nav>
+    </div>
+</nav>
   <div class="popup" id="popup-1">
     <div class="overlay"></div>
     <div class="content" id="cont">
@@ -131,5 +164,7 @@
       </table>
     </div>
     <script src="suppliers.js"></script>
+    <link rel="stylesheet" href="navv.css">
+<script src="navv.js"></script>
 </body>
 </html>

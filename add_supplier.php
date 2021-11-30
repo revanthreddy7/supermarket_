@@ -28,12 +28,41 @@
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-default  navbar-fixed-top navbar-dark bg-dark ">
-        <img src="logo.png" alt="" height=50px width=60px><a id="aone" class="navbar-brand">Suppliers</a>
+  <nav class="navbar navbar-expand-custom navbar-mainbg">
+    <img src="logo.png" alt="" height=80px width=100px>
+    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="managerlogin.html"><button type="button" name="button" class="btn btn-danger">Log Out</button></a></li>
-        </ul>
-    </nav>
+            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+            <li class="nav-item ">
+                <a class="nav-link" href="adminhome.php">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="products.php">Products</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="costing.php">Costing</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="inventory.php">Stock Purchase</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="closingstock.php">Closing Stock </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="suppliers.php">Suppliers <br>Add New Supplier</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Employees</a>
+            </li>
+
+        
+        <li class="nav-item"><button type="button" name="button" class="btn btn-danger btnn">Log Out</button></li>
+      </ul>
+    </div>
+</nav>
     <div id="popup" class="alert alert-success alert-dismissible fade show" role="alert"></div>
     <div class="form-1-container section-container">
         <div class="container">
@@ -95,5 +124,7 @@
     </div>
   <!-- </div> -->
     <script src="add_supplier.js"></script>
+    <link rel="stylesheet" href="navv.css">
+<script src="navv.js"></script>
 </body>
 </html>
