@@ -14,7 +14,7 @@
         <img src="logo.png" alt="" height=50px width=60px><a id="aone" class="navbar-brand">Billing</a>
         <a id="atrinetra" class="navbar-brand">Trinetra Sales</a>
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="billerlogin.html"><button type="button" name="button" class="btn btn-danger">Log Out</button></a></li>
+          <li class="nav-item"><a href="index.php"><button type="button" name="button" class="btn btn-danger">Log Out</button></a></li>
         </ul>
     </nav>
     <?php
@@ -34,7 +34,7 @@
     <div class="float-container" id="formintro">
       <div class="float-child" id="introform">
         <div class="form-group">
-            <p id="pbiller">Biller Name: <span id="billerspan"><b>Aditya</b></span></p>
+            <p id="pbiller">Biller ID: <span id="billerspan"><b>BL1234</b></span></p>
             <p id="pbill">Invoice Number: <span id="billno"><b>21090001</b></span></p>
             <label>Email: <br></label>
             <input style="width: 300px;display: inline;margin-left:100px" type="text" class="form-control" id="cemail" name ="cemail" placeholder="Email"><br><br>

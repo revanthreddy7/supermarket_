@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  console.log("182");
+  console.log("cf");
   $("#popup").hide();
   $("#productdetails").hide();
   $("#done").hide();
@@ -137,7 +137,9 @@ $(document).ready(function(){
             //$("#divlist").remove();
             // $("#special").remove($("#divlist"));
             // $("#addproduct").attr('disabled',true);
+            console.log("Hello");
             $("#done").show();
+            console.log("after done");
             var de=$("#divlist").detach();
             var supplierneed=need1;
             var invoicenumberneed=need3;

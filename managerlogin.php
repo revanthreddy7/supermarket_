@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biller Login</title>
+    <title>Manager Login</title>
     <link rel="stylesheet" href="login.css">
-    <!-- <link rel="stylesheet" href="rough.css"> -->
+    <link rel="stylesheet" href="rough.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-
   <?php
   if($_SERVER["REQUEST_METHOD"] == "POST")
   {
@@ -28,7 +27,7 @@
     }
     else
     {
-      $sql="SELECT Password FROM billinglogin WHERE eid='$id'";
+      $sql="SELECT Password FROM managerlogin WHERE eid='$id'";
       $result=mysqli_query($conn,$sql);
       if (mysqli_num_rows($result)==0){              echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                   <strong>Invalid Employee ID!</strong>
@@ -41,7 +40,7 @@
       if ($pw==$row['Password'])
       {
       // echo "Login Successful!";
-      header("Location:/supermarket_-main/billing.php");
+      header("Location:/supermarket_-main/managerhome.php");
       }
       else {
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -50,26 +49,22 @@
       }
     }
   }
-
       // require("C:\Users\Aditya Nutulapati\Desktop\SuperMarket Management System\adminlogin.php");
 
     }
 
-
-
-
-
    ?>
+
     <div class="wrapper fadeInDown">
         <div id="formContent">
-
           <div class="fadeIn first">
-            <img src="logo.png" id="icon" alt="User Icon"/>
-          </div><br>
-          <small style="color:#56baed"><i>Biller</i></small>
-          <form method="post">
-            <input type="text" id="eid" class="fadeIn second" name="eid" placeholder="Employee ID" required>
-            <input type="password" id="pwd" class="fadeIn third" name="pwd" placeholder="Password" required>
+            <img src="logo.png" id="icon" alt="User Icon" /><br>
+            <small style="color:#56baed"><i>Manager</i></small>
+          </div>
+          <form method="post"><br>
+            <!-- <small>A</small> -->
+            <input type="text" id="eid" class="fadeIn second" name="eid" placeholder="Employee ID">
+            <input type="password" id="pwd" class="fadeIn third" name="pwd" placeholder="Password">
             <input type="submit" class="fadeIn fourth" value="Log In">
           </form>
 
@@ -86,6 +81,5 @@
           </div>
         </div>
       </footer>
-
 </body>
 </html>

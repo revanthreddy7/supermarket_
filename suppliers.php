@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="adminhome.css">
     <link rel="stylesheet" href="suppliers_view.css">
 
-    
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -38,7 +38,7 @@
         background:#fff;
         width:700px;
         height:430px;
-        z-index:2;  
+        z-index:2;
         /* text-align:center; */
 
         padding:20px;
@@ -100,11 +100,11 @@
                 <a class="nav-link" href="suppliers.php">Suppliers</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Employees</a>
+                <a class="nav-link" href="add_employee.php">Employees</a>
             </li>
 
-        
-        <li class="nav-item"><button type="button" name="button" class="btn btn-danger btnn">Log Out</button></li>
+
+        <li class="nav-item"><a href="index.php"><button type="button" name="button" class="btn btn-danger btnn">Log Out</button></li>
       </ul>
     </div>
 </nav>

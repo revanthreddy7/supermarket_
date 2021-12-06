@@ -22,7 +22,7 @@
                 <a class="nav-link" href="products.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="products.php">Products</a>
+                <a class="nav-link" href="products1.php">Products</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="costing.php">Costing</a>
@@ -30,15 +30,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="inventory.php">Stock Purchase</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="closingstock.php">Closing Stock</a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="suppliers.php">Suppliers</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="add_employee.php">Employees</a>
-            </li>
+
 
 
         <li class="nav-item"><a href="index.php"><button type="button" name="button" class="btn btn-danger btnn">Log Out</button></a></li>
@@ -48,7 +44,7 @@
     <header>
       <div class="welcome-text">
               <h1>
-      Welcome <span>Admin!</span></h1></div>
+      Welcome <span>Manager!</span></h1></div>
     </header>
     <link rel="stylesheet" href="navv.css">
 <script src="navv.js"></script>

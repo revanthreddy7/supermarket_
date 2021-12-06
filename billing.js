@@ -1,4 +1,4 @@
-console.log("102");
+console.log("k");
 // barcode.addEventListener('input', inputHandler);
 $(document).ready(function(){
   var tv=0;var b=0;var tmp=0;
@@ -216,6 +216,7 @@ $(document).ready(function(){
           var e3=parseFloat($("#threeid").text());
           console.log(e1,e2,e3);
           var e4=e1+e2+e3;
+          e4=e4.toFixed(2);
 
           $("#pay").html("<span style='text-align:center;background-color:#32a852;'>Grand Total: &#8377;"+e4+"</span>");
           $("#msg").html(response);

@@ -79,7 +79,7 @@
     {
       while($row=mysqli_fetch_assoc($result))
       {
-        echo "<tr><td style='text-align: center;'>".$row['Category']."</td><td style='text-align: center;'>".$row['PID']."</td><td style='text-align: center;'>".$row['ProductName']."</td><td style='text-align: center;'>".$row['mrp']."</td><td style='text-align: center;'>."$row['tprice']."</td><td style='text-align: center;'><button class='btn' id='edit'><i class='fa fa-edit'></i></button></td><td style='text-align: center;'><button class='btn' id='delete'><i class='fa fa-trash'></i></button></td></tr>";
+        echo "<tr><td style='text-align: center;'>".$row['Category']."</td><td style='text-align: center;'>".$row['PID']."</td><td style='text-align: center;'>".$row['ProductName']."</td><td style='text-align: center;'>".$row['mrp']."</td><td style='text-align: center;'>.".$row['tprice']."</td><td style='text-align: center;'><button class='btn' id='edit'><i class='fa fa-edit'></i></button></td><td style='text-align: center;'><button class='btn' id='delete'><i class='fa fa-trash'></i></button></td></tr>";
       }
       echo "</tbody>";
 
