@@ -132,7 +132,7 @@
                 <a class="nav-link" href="#">Employees</a>
             </li>
 
-        
+
         <li class="nav-item"><button type="button" name="button" class="btn btn-danger btnn">Log Out</button></li>
       </ul>
     </div>
@@ -225,7 +225,6 @@
 
         </div>
     </div>
-    <script src="add_purchase.js"></script>
     <style>
       .hedd{
         text-align: center;
@@ -235,5 +234,6 @@
     </style>
     <link rel="stylesheet" href="navv.css">
 <script src="navv.js"></script>
+<script src="add_purchase.js"></script>
 </body>
 </html>

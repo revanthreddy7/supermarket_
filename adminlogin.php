@@ -40,7 +40,7 @@
       if ($pw==$row['Password'])
       {
       // echo "Login Successful!";
-      header("Location: /Supermarket Management System/adminhome.html");
+      header("Location:/supermarket_-main/adminhome.php");
       }
       else {
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
