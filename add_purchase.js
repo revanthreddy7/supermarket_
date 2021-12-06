@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  console.log("cf");
+  console.log("b");
   $("#popup").hide();
   $("#productdetails").hide();
   $("#done").hide();
@@ -133,7 +133,8 @@ $(document).ready(function(){
             $("#addproduct").attr('disabled',true);
             $("#savebutton1").attr('disabled',false);
         });
-        $("#producttable").on("click", "#savebutton1", function() {
+        // $("#producttable").on("click", "#savebutton1", function() {
+           $("#savebutton1").click(function(){
             //$("#divlist").remove();
             // $("#special").remove($("#divlist"));
             // $("#addproduct").attr('disabled',true);
