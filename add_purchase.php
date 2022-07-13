@@ -175,7 +175,7 @@
                         </fieldset>
                         <div class="form-group row text-right">
                             <div class="col">
-                                <button type="button" class="btn btn-danger" name="savebutton" id="savebutton">Enter</button>
+                                <button type="button" class="btn btn-danger" name="savebutton" id="savebutton">Ente</button>
                             </div>
                         </div>
                         <div list="productlist" id="divlist">
@@ -187,7 +187,7 @@
                         <fieldset class="form-group border p-3">
                             <legend class="w-auto px-2">Product Details</legend>
                             <div class="bb tt">
-                            <button type="button" name="savebutton1" class="btn btn-info" id="savebutton1"style="float:right;margin-right:20px;">Save</button>
+                            <button type="button" name="savebutton1" class="btn btn-info" id="savebutton1" style="float:right;margin-right:20px;">Save</button>
 
                               <button type="button" name="addproduct" class="btn btn-success" id="addproduct" style="float:right;margin-right:20px;">Add Product</button>
 
